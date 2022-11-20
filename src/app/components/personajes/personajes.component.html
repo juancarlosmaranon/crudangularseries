@@ -1,11 +1,12 @@
 <div>
     <h1>Personajes</h1>
+    <a class="btn btn-danger" [routerLink]="['/detailsseries',id]">Volver</a>
     <div class="card" style="width: 18rem" *ngFor="let personaje of personajes">
         <img src="{{ personaje.imagen }}" class="card-img-top" alt="..." />
         <div class="card-body">
           <h5 class="card-title">{{ personaje.nombre }}</h5>
         </div>
-        <a class="btn btn-danger" [routerLink]="['/detailsseries',personaje.idSerie]">Volver</a>
+        <a class="btn btn-danger" [routerLink]="['/detailsseries',personaje.idSerie]" (click)="borrarPersonajes(personaje.idPersonaje)">Borrar</a>
     </div> 
          
 </div>

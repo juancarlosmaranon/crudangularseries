@@ -11,11 +11,18 @@ import { Router, Params, ActivatedRoute } from '@angular/router';
 export class PersonajesComponent implements OnInit {
 
   public personajes!:Array<Personaje>;
+  public id!: number;
 
   constructor(
     private _service: SeriesService,
     private _activeRoutes:ActivatedRoute
   ) { }
+
+  borrarPersonajes(id:number):void{
+    this._service.deletePersonaje(id).subscribe(response=>{
+      this.loadPersonajes(id);
+    })
+  }
 
   loadPersonajes(id:number):void{
     this._service.getPersonajes(id.toString()).subscribe(response=>{
@@ -27,8 +34,8 @@ export class PersonajesComponent implements OnInit {
   ngOnInit(): void {
     this._activeRoutes.params.subscribe((params:Params)=>{
       if(params['id'] !=null){
-        var id = parseInt(params['id']);
-        this.loadPersonajes(id);
+        this.id = parseInt(params['id']);
+        this.loadPersonajes(this.id);
       }
     })
   }

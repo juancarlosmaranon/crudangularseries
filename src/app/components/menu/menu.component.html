@@ -10,14 +10,14 @@
             <a class="nav-link active" aria-current="page" [routerLink]="['/']">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" [routerLink]="['/insertar']">Home</a>
+            <a class="nav-link active" aria-current="page" [routerLink]="['/insertar']">Insertar Personaje</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"></a>
+            <a class="nav-link active" aria-current="page" [routerLink]="['/modificar']">Modificar Personaje</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
+              Series
             </a>
             <ul class="dropdown-menu" >
               <li *ngFor="let serie of series"><a class="dropdown-item" [routerLink]="['/detailsseries',serie.idSerie]">{{serie.nombre}}</a></li>

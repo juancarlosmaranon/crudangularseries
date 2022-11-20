@@ -1,0 +1,13 @@
+<div>
+    <form #modificarForm="ngForm" style="width: 30%; margin:auto">
+        <select name="cajaidserie" #cajaidserie> 
+            <option *ngFor="let serie of series" value="{{serie.idSerie}}">{{serie.nombre}}</option>
+        </select>
+        
+        <select name="cajaidpersonaje" #cajaidpersonaje>
+            <option *ngFor="let personaje of personajes" value="{{personaje.idPersonaje}}">{{personaje.nombre}}</option>
+        </select>
+        
+        <button class="btn btn-success" (click)="modificarPersonaje()">Crear</button>
+    </form>
+</div>

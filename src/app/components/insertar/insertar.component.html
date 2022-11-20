@@ -1,13 +1,16 @@
 <div>
-    <form #insertarForm="ngForm">
+    <form #insertarForm="ngForm" style="width: 30%; margin:auto">
+        <label>ID:</label>
+        <input type="text" class="form-control"
+            name="cajaid" #cajaid/>
         <label>Nombre:</label>
-        <input type="number" class="form-control"
+        <input type="text" class="form-control"
             name="cajanombre" #cajanombre/>
         <label>Imagen:</label>
         <input type="text" class="form-control"
             name="cajaimagen" #cajaimagen/>
-        <select *ngFor="let serie of series">
-            <option>{{}}</option>
+        <select>
+            <option *ngFor="let serie of series" name="cajaidserie" #cajaidserie value="{{serie.idSerie}}">{{serie.nombre}}</option>
         </select>
         <button class="btn btn-success" (click)="insertarPersonaje()">Crear</button>
     </form>

@@ -10,6 +10,7 @@ import { SeriesComponent } from './components/series/series.component';
 import { SeriesService } from './services/series.service';
 import { PersonajesComponent } from './components/personajes/personajes.component';
 import { InsertarComponent } from './components/insertar/insertar.component';
+import { ModificarComponent } from './components/modificar/modificar.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { InsertarComponent } from './components/insertar/insertar.component';
     MenuComponent,
     SeriesComponent,
     PersonajesComponent,
-    InsertarComponent
+    InsertarComponent,
+    ModificarComponent
   ],
   imports: [
     BrowserModule,
